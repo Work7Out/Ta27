@@ -83,7 +83,7 @@ fun WebViewScreen(
                 modifier
                     .fillMaxWidth()
                     .background(color = MaterialTheme.colorScheme.primary)
-                    .padding(horizontal = 10.dp),
+                    .padding(10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(

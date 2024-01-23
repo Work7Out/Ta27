@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -39,7 +40,7 @@ fun ItemLoan(
             .fillMaxWidth()
             .clip(shape = RoundedCornerShape(15.dp))
             .background(color = MaterialTheme.colorScheme.primaryContainer)
-            .padding(5.dp)
+            .padding(10.dp)
     ) {
         Row(
             modifier = modifier
@@ -47,13 +48,15 @@ fun ItemLoan(
             verticalAlignment = Alignment.CenterVertically
         ) {
             AsyncImage(
-                modifier = modifier.weight(1f),
+                modifier = modifier
+                    .width(150.dp),
                 model = imagePath,
                 contentDescription = "",
+                contentScale = ContentScale.FillWidth
             )
             Spacer(modifier = modifier.width(10.dp))
             Text(
-                modifier = modifier.fillMaxWidth(),
+                modifier = modifier.weight(1f),
                 text = maxSum,
                 style = TextStyle(
                     fontSize = 24.sp,
@@ -62,28 +65,28 @@ fun ItemLoan(
                 ),
                 textAlign = TextAlign.Center
             )
-            Spacer(modifier = modifier.height(10.dp))
-            Button(
-                modifier = modifier
-                    .fillMaxWidth(),
-                shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.secondary,
-                    contentColor = MaterialTheme.colorScheme.onSecondary
-                ),
-                contentPadding = PaddingValues(
-                    vertical = 10.dp
-                ),
-                onClick = onClick
-            ) {
-                Text(
-                    text = stringResource(id = R.string.take_money),
-                    style = TextStyle(
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight(500)
-                    )
+        }
+        Spacer(modifier = modifier.height(10.dp))
+        Button(
+            modifier = modifier
+                .fillMaxWidth(),
+            shape = RoundedCornerShape(8.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.secondary,
+                contentColor = MaterialTheme.colorScheme.onSecondary
+            ),
+            contentPadding = PaddingValues(
+                vertical = 10.dp
+            ),
+            onClick = onClick
+        ) {
+            Text(
+                text = stringResource(id = R.string.take_money),
+                style = TextStyle(
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight(500)
                 )
-            }
+            )
         }
     }
 }

@@ -56,7 +56,7 @@ fun SuccessScreen(
                 ItemLoan(
                     imagePath = loan.imageUrl,
                     maxSum = loan.sumOne,
-                    onClick = { goToWeb(loan.imageUrl) }
+                    onClick = { goToWeb(loan.url) }
                 )
             }
         }
