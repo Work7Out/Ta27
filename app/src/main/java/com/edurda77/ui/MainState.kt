@@ -9,4 +9,5 @@ data class MainState(
     val moneyList: List<Loan> = emptyList(),
     val error: String? = null,
     val isLoading: Boolean = true,
+    val appState: AppState = AppState.Loading
 )

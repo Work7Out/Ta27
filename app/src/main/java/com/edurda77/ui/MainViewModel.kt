@@ -33,7 +33,8 @@ class MainViewModel @Inject constructor(
                 is Resource.Error -> {
                     _state.value.copy(
                         error = resultLoad.message,
-                        isLoading = false
+                        isLoading = false,
+                        appState = AppState.Error
                     )
                         .updateStateUI()
                 }
@@ -42,12 +43,27 @@ class MainViewModel @Inject constructor(
                     _state.value.copy(
                         moneyList = loans,
                         isLoading = false,
+                        appState = AppState.Success
                     )
                         .updateStateUI()
                     _baseLoans.value = loans
                 }
             }
         }
+    }
+
+    fun goToWeb(url:String) {
+        _state.value.copy(
+            appState = AppState.Web(url)
+        )
+            .updateStateUI()
+    }
+
+    fun backFromWeb() {
+        _state.value.copy(
+            appState = AppState.Success
+        )
+            .updateStateUI()
     }
 
     private fun MainState.updateStateUI() {
