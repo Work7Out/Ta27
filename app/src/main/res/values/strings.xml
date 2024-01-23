@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">Ta27</string>
+    <string name="app_name">Займ</string>
     <string name="back">Назад</string>
     <string name="send">Отправьте заявку в три организации для успешного одобрения займа</string>
     <string name="take_money">Получить деньги</string>
+    <string name="rub">₽</string>
+
 </resources>

@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.edurda77"
+    namespace = "dengionine.zaimbezotkazadozp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.edurda77"
+        applicationId = "dengionine.zaimbezotkazadozp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
